@@ -14,10 +14,15 @@
         <div class="row flex-nowrap">
     <div class="bg-secondary col-auto min-vh-100 d-flex flex-column justify-content-between">
         <div class="bg-secondary p-2">
-            
-            <a class="d-flex text-decoration-none mt-3 align-items-center justify-content-center">
-                <img src="./img/otto_tiffany.svg" style="margin: 0px 2px" alt="..." width="90" height="95">               
-            </a>
+            <div class="row text-center">
+                <a class="d-flex text-decoration-none mt-3 align-items-center justify-content-center d-none d-sm-inline">
+                    <img src="./img/otto_tiffany.svg" style="margin: 0px 2px" alt="..." width="90" height="95">               
+                </a>
+                <a class="d-flex text-decoration-none mt-3 align-items-center justify-content-center d-sm-none">
+                    <img src="./img/otto_tiffany.svg" style="margin: 0px 2px" alt="..." width="45" height="50">               
+                </a>
+            </div>
+
             <ul class="nav nav-pills flex-column mt-4">
                 <li class="nav-item py-2 py-sm-0">
                     <a href="dashboard.html" class="nav-link text-white">
@@ -52,6 +57,7 @@
             </ul>
         </div>
     </div>
+
 
         <div class="col-9 p-0">
             <header class="topo" id="topo">
@@ -91,12 +97,12 @@
                 <div class="container col-9" style="margin-top: 80px; margin-bottom: 50px;">
                   <div class="row justify-content-center">
                     <div class="col-12">
-                      <p class="h4 text-center">Perfil</p>
+                      <p class="h3 text-center">Perfil</p>
                     </div>
                   </div>
                 </div>
           
-                <div class="container col-sm-3 mt-3" style="margin-bottom: 500px;">
+                <div class="container col-sm-6 mt-3" style="margin-bottom: 500px;">
                   <form name="formulario-perfil" method="post" action="">
                     <div class="mb-3">
                         <label for="input-nome" class="form-label">Nome</label>
@@ -106,38 +112,44 @@
                         <label for="input-sobrenome" class="form-label">Sobrenome</label>
                         <input id="input-sobrenome" class="form-control" type="text" name="Sobrenome">
                     </div>
-                    <div class="mb-3">
-                        <label for="input-foto" class="form-label">Foto</label>
-                        <input id="input-foto" class="form-control" type="file" name="Foto">
+                    <div class="max-width mb-3">
+                        <div>Foto</div>
+                        <div class="imageContainer mb-3">
+                            <img src="./img/perfil.png" alt="Selecione uma imagem" id="imgPhoto">
+                        </div>                        
+                        <input id="flImage" class="form-control" type="file" name="fImage" accept="image/*">
                     </div>
-                    <div class="mb-3">
-                        <label for="input-senha-atual" class="form-label">Senha Atual</label>
-                        <input id="input-senha-atual" class="form-control" type="text" name="Senha_Atual">
+                    <button onclick="validador()" type="submit" class="btn btn-secondary mb-3">Enviar</button>
+                  </form>
+
+                  <form>
+                    <div class="col-9" style="margin-top: 50px; margin-bottom: 15px;">
+                        <p class="h4 justify-content-start">Alterar Senha</p>
                     </div>
-                    <div class="mb-3">
+                    <div class="col-9 mb-3">
                         <label for="input-nova-senha" class="form-label">Nova Senha</label>
                         <input id="input-nova-senha" class="form-control" type="text" name="Nova_Senha">
                     </div>
-                    <div class="mb-3">
+                    <div class="col-9 mb-3">
                         <label for="input-confirme_senha" class="form-label">Confirme a Senha</label>
                         <input id="input-confirme_senha" class="form-control" type="text" name="Confirme_Senha">
                     </div>
-                    <button onclick="validador()" type="submit" class="btn btn-secondary mb-3">Enviar</button>
-                  </form>        
-                </div>
+                    <button onclick="validador()" type="submit" class="btn btn-secondary mb-3">Atualizar</button>
+                  </form>  
+                </div>                  
             </section>
 
             <footer class="footer">                
                 <div class="row" style="border-top: 1px solid #b6b4b4; margin-left: 0px;">
                   <div class="col-12">
-                        <p class="d-flex justify-content-center align-items-center mt-2 mb-1">
-                            <img src="./img/otto_cinza.svg" style="margin: 0px 4px" alt="..." width="40" height="45">
-                            <a style="text-decoration: none; color: #737373; font-size: 16px;" href="quem_somos.html"><span class="me-3">Quem Somos</span></a>
-                            <a href="https://www.instagram.com/"><img src="./img/separador6.svg" class="card-img-top" alt="..." width="36" height="40"></a>
-                            <a href="https://www.instagram.com/"><img src="./img/icone_instagram4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
-                            <a href="https://www.facebook.com/"><img src="./img/icone_facebook4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
-                            <a href="https://www.clicrbs.com.br/"><img src="./img/icone_whats4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
-                        </p>
+                    <p class="d-flex justify-content-center align-items-center mt-2 mb-1">
+                        <img src="./img/otto_cinza.svg" style="margin: 0px 4px" alt="..." width="40" height="45">
+                        <a style="text-decoration: none; color: #737373; font-size: 16px;" href="quem_somos.html"><span class="me-3">Quem Somos</span></a>
+                        <a href=""><img src="./img/separador6.svg" class="card-img-top" alt="..." width="36" height="40"></a>
+                        <a href="https://www.instagram.com/easy.publi" target="_blank"><img src="./img/icone_instagram4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
+                        <a href="https://www.facebook.com/easypublibr" target="_blank"><img src="./img/icone_facebook4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
+                        <a href="https://api.whatsapp.com/send?phone=5551981396199&text=Ol%C3%A1!%20Seja%20bem%20vindo%20ao%20Atendimento%20easy%20Publi!" target="_blank"><img src="./img/icone_whats4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
+                    </p>
                   </div>
                 </div>
                 <div class="row" style="border-top: 1px solid #b6b4b4; margin-left: 0px;">
@@ -151,6 +163,8 @@
     
     </div> 
      
+    <script src="./js/scripts.js"></script>
+
     <script type="text/javascript">
       
         function validador(){		
@@ -166,7 +180,7 @@
             return false;
           }	
         };
-        </script>
+        </script>   
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>

@@ -5,6 +5,13 @@
     border-bottom: 1px solid #b6b4b4;
 }
 
+.topo_novo{
+	padding: 12px 0px 12px 10px;;
+	position: relative;
+	background: #fff;
+    border-bottom: 1px solid #b6b4b4;
+}
+
 
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -36,6 +43,38 @@ background-color: #e2e2e2;
     border: 1px solid #737373;
 }
 
+
+input[type="file"]{
+    display: none;
+}
+
+/*tirar depois se der errado*/
+.max-width{
+    max-width: 500px;
+    width: 100%;
+}
+
+
+
+#imgPhoto{
+    width: 75px;
+    height: 75px;
+    padding: 0px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+
+#imgPhoto:hover{
+    background-color: rgb(180,180,180);
+    border: 2px solid #ccc;
+}
+
+
+
 .container_base{
  margin-left: 50px;
 
@@ -50,7 +89,28 @@ body {
     background-color: #68e9e9;
 }
 
-.carrossel {
+.estilo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;       
+}
+
+.estilo1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    font-size: 18px;    
+}
+
+.estilo2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    font-size: 16px; 
+    font-style: italic;   
+}
+
+
+.esp{
+    line-height: 150%; 
+}
+
+.carrossel, .adicionais {
     background-color: #68e9e9;
     border-color: #68e9e9;
     padding-top: 10px;
@@ -132,3 +192,4 @@ body {
     color: black;
     font-size: 16px;    
 }    
+

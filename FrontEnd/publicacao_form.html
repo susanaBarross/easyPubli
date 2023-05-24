@@ -14,18 +14,22 @@
         <div class="row flex-nowrap">
     <div class="bg-secondary col-auto min-vh-100 d-flex flex-column justify-content-between">
         <div class="bg-secondary p-2">
-            
-            <a class="d-flex text-decoration-none mt-3 align-items-center justify-content-center">
-                <img src="./img/otto_tiffany.svg" style="margin: 0px 2px" alt="..." width="90" height="95">               
-            </a>
+            <div class="row text-center">
+                <a class="d-flex text-decoration-none mt-3 align-items-center justify-content-center d-none d-sm-inline">
+                    <img src="./img/otto_tiffany.svg" style="margin: 0px 2px" alt="..." width="90" height="95">               
+                </a>
+                <a class="d-flex text-decoration-none mt-3 align-items-center justify-content-center d-sm-none">
+                    <img src="./img/otto_tiffany.svg" style="margin: 0px 2px" alt="..." width="45" height="50">               
+                </a>
+            </div>
             <ul class="nav nav-pills flex-column mt-4">
                     <li class="nav-item py-2 py-sm-0">
-                        <a href="index2.html" class="nav-link text-white">
+                        <a href="dashboard.html" class="nav-link text-white">
                             <i class="fs-5 fa fa-gauge"></i><span class="fs-4 ms-3 d-none d-sm-inline">Dashboard</span>      
                         </a>  
                     </li>
                     <li class="nav-item py-2 py-sm-0">
-                        <a href="#" class="nav-link text-white">
+                        <a href="produtos.html" class="nav-link text-white">
                             <i class="fs-5 fa fa-cart-shopping"></i><span class="fs-4 ms-3 d-none d-sm-inline">Produtos</span>      
                         </a> 
                     </li>
@@ -35,17 +39,17 @@
                         </a>   
                     </li>
                     <li class="nav-item py-2 py-sm-0">
-                        <a href="#" class="nav-link text-white">
+                        <a href="publi_chatGPT.html" class="nav-link text-white">
                             <i class="fs-5 fa fa-robot"></i><span class="fs-4 ms-3 d-none d-sm-inline">Publi ChatGPT</span>      
                         </a>   
                     </li>
                     <li class="nav-item py-2 py-sm-0">
-                        <a href="#" class="nav-link text-white">
+                        <a href="trends.html" class="nav-link text-white">
                             <i class="fs-5 fa fa-arrow-trend-up"></i><span class="fs-4 ms-3 d-none d-sm-inline">Trends</span>      
                         </a>   
                     </li>
                     <li class="nav-item py-2 py-sm-0">
-                        <a href="#" class="nav-link text-white">
+                        <a href="links.html" class="nav-link text-white">
                             <i class="fs-5 fa fa-link"></i><span class="fs-4 ms-3 d-none d-sm-inline">Links Úteis</span>      
                         </a>   
                     </li>
@@ -110,29 +114,6 @@
                         <input id="input-produto-div" class="form-control" type="text" name="Produto_Div">
                     </div>
                     <div class="mb-3">
-                        <label for="input-produto-div2" class="form-label">Produto Divulgado (Relacionar com os Cadastrados)</label>
-                        <input id="input-produto-div2" list="lista_produtos" class="form-control" name="Lista_Produtos">
-                        <datalist id="lista_produtos">
-                            <option value="Curso A"></option>
-                            <option value="Curso B"></option>
-                            <option value="Curso C"></option>
-                            <option value="Curso D"></option>
-                            <option value="Curso E"></option>
-                        </datalist>
-                    </div>
-                    <div class="mb-3">
-                        <label for="input-produto-div3" class="form-label">Produto Divulgado (Relacionar com os Cadastrados - Outra Opção)</label>
-                        <select id="input-produto-div3" class="form-select form-select-md" name="Lista_Produtos">
-                    <!-- poderia usar multiple para permitir diversas selecoes ao mesmo tempo, assim: <select class="form-select form-select-md" multiple name="Lista_Produtos">-->
-                            <option selected>--Selecione--</option>
-                            <option value="Curso A">Curso A</option>
-                            <option value="Curso B">Curso B</option>
-                            <option value="Curso C">Curso C</option>
-                            <option value="Curso D">Curso D</option>
-                            <option value="Curso E">Curso E</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
                         <label for="input-midia" class="form-label">Mídia</label>
                         <input id="input-midia" class="form-control" type="text" name="Midia">
                     </div>
@@ -172,14 +153,14 @@
             <footer class="footer">                
                 <div class="row" style="border-top: 1px solid #b6b4b4; margin-left: 0px;">
                   <div class="col-12">
-                        <p class="d-flex justify-content-center align-items-center mt-2 mb-1">
-                            <img src="./img/otto_cinza.svg" style="margin: 0px 4px" alt="..." width="40" height="45">
-                            <a style="text-decoration: none; color: #737373; font-size: 16px;" href="quem_somos.html"><span class="me-3">Quem Somos</span></a>
-                            <a href="https://www.instagram.com/"><img src="./img/separador6.svg" class="card-img-top" alt="..." width="36" height="40"></a>
-                            <a href="https://www.instagram.com/"><img src="./img/icone_instagram4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
-                            <a href="https://www.facebook.com/"><img src="./img/icone_facebook4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
-                            <a href="https://www.clicrbs.com.br/"><img src="./img/icone_whats4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
-                        </p>
+                    <p class="d-flex justify-content-center align-items-center mt-2 mb-1">
+                        <img src="./img/otto_cinza.svg" style="margin: 0px 4px" alt="..." width="40" height="45">
+                        <a style="text-decoration: none; color: #737373; font-size: 16px;" href="quem_somos.html"><span class="me-3">Quem Somos</span></a>
+                        <a href=""><img src="./img/separador6.svg" class="card-img-top" alt="..." width="36" height="40"></a>
+                        <a href="https://www.instagram.com/easy.publi" target="_blank"><img src="./img/icone_instagram4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
+                        <a href="https://www.facebook.com/easypublibr" target="_blank"><img src="./img/icone_facebook4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
+                        <a href="https://api.whatsapp.com/send?phone=5551981396199&text=Ol%C3%A1!%20Seja%20bem%20vindo%20ao%20Atendimento%20easy%20Publi!" target="_blank"><img src="./img/icone_whats4.svg" class="card-img-top" alt="..." width="36" height="40"></a>
+                    </p>
                   </div>
                 </div>
                 <div class="row" style="border-top: 1px solid #b6b4b4; margin-left: 0px;">
