@@ -1,0 +1,19 @@
+16-Jun-23 20:50:48 - test
+16-Jun-23 20:50:48 - 127.0.0.1 - - [16/Jun/2023 20:50:48] "[35m[1mDELETE /webapi/links HTTP/1.1[0m" 201 -
+16-Jun-23 20:50:48 - 127.0.0.1 - - [16/Jun/2023 20:50:48] "OPTIONS /webapi/links/6488e5ff9392e43247117375 HTTP/1.1" 200 -
+16-Jun-23 20:50:48 - 127.0.0.1 - - [16/Jun/2023 20:50:48] "[35m[1mGET /webapi/links/6488e5ff9392e43247117375 HTTP/1.1[0m" 201 -
+16-Jun-23 20:52:58 - 127.0.0.1 - - [16/Jun/2023 20:52:58] "OPTIONS /webapi/links/6488e5ff9392e43247117375 HTTP/1.1" 200 -
+16-Jun-23 20:52:58 - 127.0.0.1 - - [16/Jun/2023 20:52:58] "[35m[1mGET /webapi/links/6488e5ff9392e43247117375 HTTP/1.1[0m" 201 -
+16-Jun-23 20:53:07 - 127.0.0.1 - - [16/Jun/2023 20:53:07] "OPTIONS /webapi/links HTTP/1.1" 200 -
+16-Jun-23 20:53:07 - 127.0.0.1 - - [16/Jun/2023 20:53:07] "[35m[1mPOST /webapi/links HTTP/1.1[0m" 201 -
+16-Jun-23 20:53:09 - 127.0.0.1 - - [16/Jun/2023 20:53:09] "OPTIONS /webapi/links/6488e5ff9392e43247117375 HTTP/1.1" 200 -
+16-Jun-23 20:53:09 - 127.0.0.1 - - [16/Jun/2023 20:53:09] "[35m[1mGET /webapi/links/6488e5ff9392e43247117375 HTTP/1.1[0m" 201 -
+16-Jun-23 20:53:11 - 127.0.0.1 - - [16/Jun/2023 20:53:11] "OPTIONS /webapi/links HTTP/1.1" 200 -
+16-Jun-23 20:53:11 - test
+16-Jun-23 20:53:11 - 127.0.0.1 - - [16/Jun/2023 20:53:11] "[35m[1mDELETE /webapi/links HTTP/1.1[0m" 201 -
+16-Jun-23 20:53:14 - 127.0.0.1 - - [16/Jun/2023 20:53:14] "OPTIONS /webapi/links HTTP/1.1" 200 -
+16-Jun-23 20:53:14 - test
+16-Jun-23 20:53:14 - Error: Object of type set is not JSON serializable
+16-Jun-23 20:53:14 - 127.0.0.1 - - [16/Jun/2023 20:53:14] "DELETE /webapi/links HTTP/1.1" 200 -
+16-Jun-23 20:53:15 - 127.0.0.1 - - [16/Jun/2023 20:53:15] "OPTIONS /webapi/links/6488e5ff9392e43247117375/648cf5e36643d4dc37686a02 HTTP/1.1" 200 -
+16-Jun-23 20:53:15 - 127.0.0.1 - - [16/Jun/2023 20:53:15] "[35m[1mGET /webapi/links/6488e5ff9392e43247117375/648cf5e36643d4dc37686a02 HTTP/1.1[0m" 201 -
