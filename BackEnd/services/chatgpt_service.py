@@ -107,18 +107,16 @@ class ChatGPTService(object):
             return "Error " + str(e)
 
     @staticmethod
-    def get_chatgpt_api_key() -> str:
+    def get_api_control() -> str:
 
-        return os.environ.get("API_CHATGPT_KEY")
+        return os.environ.get("API_CONTROL")
 
 
     def call_chatgpt(self, question: str) -> str:
 
         log("start chatgpt call")
-        openai.api_key = self.get_chatgpt_api_key()
+        openai.api_key = self.get_api_control()
 
-        log("chatgpt api key ")
-        log(openai.api_key)
         print(openai.api_key)
 
         response = openai.ChatCompletion.create(
