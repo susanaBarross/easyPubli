@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
-  <body>  
+  <body onload="menu_add_user();load_profile_user();get_produto_update ()">  
     <div class="container-fluid">
         <div class="row flex-nowrap">
     <div class="bg-secondary col-auto min-vh-100 d-flex flex-column justify-content-between">
@@ -24,32 +24,32 @@
             </div>
             <ul class="nav nav-pills flex-column mt-4">
                 <li class="nav-item py-2 py-sm-0">
-                    <a href="dashboard.html" class="nav-link text-white">
+                    <a href="" id="dashboardHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-gauge"></i><span class="fs-4 ms-3 d-none d-sm-inline">Dashboard</span>      
                     </a>  
                 </li>
                 <li class="nav-item py-2 py-sm-0 destaque">
-                    <a href="produtos.html" class="nav-link text-white">
+                    <a href="" id="produtosHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-cart-shopping"></i><span class="fs-4 ms-3 d-none d-sm-inline destaque_fonte">Produtos</span>      
                     </a> 
                 </li>
                 <li class="nav-item py-2 py-sm-0">
-                    <a href="publicacoes.html" class="nav-link text-white">
+                    <a href="" id="publicacoesHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-table-list"></i><span class="fs-4 ms-3 d-none d-sm-inline">Publicações</span>      
                     </a>   
                 </li>
                 <li class="nav-item py-2 py-sm-0">
-                    <a href="publi_chatGPT.html" class="nav-link text-white">
+                    <a href="" id="publiChatHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-robot"></i><span class="fs-4 ms-3 d-none d-sm-inline">Publi ChatGPT</a></span>        
                     </a>   
                 </li>
                 <li class="nav-item py-2 py-sm-0">
-                    <a href="trends.html" class="nav-link text-white">
+                    <a href="" id="trendsHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-arrow-trend-up"></i><span class="fs-4 ms-3 d-none d-sm-inline">Trends</span>      
                     </a>   
                 </li>
                 <li class="nav-item py-2 py-sm-0">
-                    <a href="links.html" class="nav-link text-white">
+                    <a href="" id="linksHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-link"></i><span class="fs-4 ms-3 d-none d-sm-inline">Links Úteis</span>      
                     </a>   
                 </li>
@@ -72,15 +72,15 @@
                                 <div class="picture1">
                                     <img class="perfil" src="img/perfil.png" alt="perfil_icone" width="55" height="55" data-bs-toggle="dropdown" aria-expanded="false">
                                     <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="perfil_oficial.html">Perfil</a></li>
-                                    <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+                                    <li><a class="dropdown-item" id="perfil_link1" href="">Perfil</a></li>
+                                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
                                     </ul>
                                 </div>
                                 <div class="picture2">
                                     <img class="perfil" src="img/perfil_hover.png" alt="perfil_hover" width="55" height="55" data-bs-toggle="dropdown" aria-expanded="false">
                                     <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="perfil_oficial.html">Perfil</a></li>
-                                    <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+                                    <li><a class="dropdown-item" id="perfil_link2" href="">Perfil</a></li>
+                                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -104,66 +104,67 @@
                 <div class="container col-sm-6 mt-3" style="margin-bottom: 400px;">
                   <form name="formulario-perfil" method="post" action="">
                     <div class="mb-3">
-                        <label for="input-produto" class="form-label col-12">Produto</label>
-                        <input required id="input-produto" class="form-control" type="text" name="Produto">
+                        <input type="hidden" id="user_id" value="646b8ee7bc979d5ea5fcf6ce">
+                        <input type="hidden" id="product_id" value="">
+                        <label for="produto" class="form-label col-12">Produto*</label>
+                        <input required id="produto" class="form-control" type="text" name="produto">
                     </div>
                     <div class="mb-3">
-                        <label for="input-plaforma" class="form-label col-12">Plataforma</label>
-                        <input id="input-plaforma" class="form-control" type="text" name="Plataforma">
+                        <label for="plataforma" class="form-label col-12">Plataforma*</label>
+                        <input required id="plataforma" class="form-control" type="text" name="plataforma">
                     </div>
                     <div class="mb-3">
-                        <label for="input-preco" class="form-label col-12">Preço Máximo</label>
+                        <label for="preco_maximo" class="form-label col-12">Preço Máximo</label>
                         <div class="input-group">
                             <span class="input-group-text">R$</span>
-                            <input required id="input-preco" class="form-control" type="text" name="Preco">
+                            <input id="preco_maximo" class="form-control" type="number" name="preco_maximo">
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="input-comissao" class="form-label col-12">Comissão</label>
+                        <label for="comissao" class="form-label col-12">Comissão*</label>
                         <div class="input-group">
                             <span class="input-group-text">R$</span>
-                            <input required id="input-comissao" class="form-control" type="text" name="Comissao">
+                            <input required id="comissao" class="form-control" type="number" name="comissao">
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="input-qtde" class="form-label col-12">Qtde Vendida</label>
-                        <input id="input-qtde" class="form-control" type="text" name="Qtde">
+                        <label for="qtd_vendida" class="form-label col-12">Qtde Vendida*</label>
+                        <input required id="qtd_vendida" class="form-control" type="number" name="qtd_vendida">
                     </div>
                     <div class="mb-3">
                         <label class="form-label col-12">Status</label>
                         <div class="form-check">
-                            <input id="ativo" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label for="ativo" class="form-check-label" for="flexRadioDefault1">
+                            <input id="ativo" class="form-check-input" type="radio" name="status" value="ativo" checked>
+                            <label for="ativo" class="form-check-label" for="ativo">
                             Ativo
                             </label>
                         </div>
                         <div class="form-check">
-                            <input id="inativo" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label for="inativo" class="form-check-label" for="flexRadioDefault1">
+                            <input id="inativo" class="form-check-input" type="radio" name="status" value="inativo" >
+                            <label for="inativo" class="form-check-label" for="inativo">
                             Inativo
                             </label>
                         </div>
                         <div class="form-check">
-                            <input id="pendente" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label for="pendente" class="form-check-label" for="flexRadioDefault1">
+                            <input id="selecionado" class="form-check-input" type="radio" name="status" value="selecionado">
+                            <label for="selecionado" class="form-check-label" for="selecionado">
                             Selecionado
                             </label>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="input-link" class="form-label col-12">Link</label>
-                        <input id="input-link" class="form-control" type="text" name="Link">
+                        <label for="divulgacao" class="form-label col-12">Divulgação</label>
+                        <input id="divulgacao" class="form-control" type="text" name="divulgacao">
                     </div>
                     <div class="mb-3">
+                        <label for="link" class="form-label col-12">Link</label>
+                        <input id="link" class="form-control" type="text" name="link">
+                    </div>
                     <div class="mb-3">
-                        <label for="input-divulgacao" class="form-label col-12">Divulgação</label>
-                        <input id="input-divulgacao" class="form-control" type="text" name="divulgacao">
-                    </div>
-                        <div class="mb-3">
-                        <label for="input-observacao" class="form-label col-12">Observação</label>
-                        <textarea id="input-observacao" class="form-control" type="text" name="Observacao"></textarea>
-                    </div>
-                    <button onclick="validador()" type="submit" class="btn btn-secondary mb-3">Enviar</button>
+                        <label for="observacao" class="form-label col-12">Observação</label>
+                        <textarea id="observacao" class="form-control" type="text" name="observacao"></textarea>
+                    </div>                    
+                    <input type="button" value="Enviar" class="btn btn-secondary mb-3" onclick="cadastro_produto()">
                   </form>        
                 </div>
               </section>
@@ -194,23 +195,8 @@
     
     </div> 
      
-    <script type="text/javascript">
-      
-        function validador(){		
-          var senha = document.getElementsByName("senha")[0];
-          var email = document.getElementsByName("email")[0];
-          
-          if (senha.value.length == "") {  
-            senha.parentNode.classList.add('was-validated');
-            return false;
-          }
-          if (email.value.length < 3) {
-            email.parentNode.classList.add('was-validated');
-            return false;
-          }	
-        };
-        </script>
-  
+    <script src="./js/easyPubJS.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
 </html>

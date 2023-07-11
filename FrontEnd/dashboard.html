@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="./js/apexcharts.min.js"></script>
 </head>
-  <body>  
+  <body onload="menu_add_user();get_user();load_dash_graficos()"> 
+    <input type="hidden" id="user_id" name="user_id" value="">  
     <div class="container-fluid">
         <div class="row flex-nowrap">
     <div class="bg-secondary col-auto min-vh-100 d-flex flex-column justify-content-between">
@@ -26,32 +27,32 @@
 
             <ul class="nav nav-pills flex-column mt-4">
                 <li class="nav-item py-2 py-sm-0 destaque">
-                    <a href="dashboard.html" class="nav-link text-white">
+                    <a href="" id="dashboardHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-gauge"></i><span class="fs-4 ms-3 d-none d-sm-inline destaque_fonte">Dashboard</span>      
                     </a>  
                 </li>
                 <li class="nav-item py-2 py-sm-0">
-                    <a href="produtos.html" class="nav-link text-white">
+                    <a href="" id="produtosHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-cart-shopping"></i><span class="fs-4 ms-3 d-none d-sm-inline">Produtos</span>      
                     </a> 
                 </li>
                 <li class="nav-item py-2 py-sm-0">
-                    <a href="publicacoes.html" class="nav-link text-white">
+                    <a href="" id="publicacoesHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-table-list"></i><span class="fs-4 ms-3 d-none d-sm-inline">Publicações</span>      
                     </a>   
                 </li>
                 <li class="nav-item py-2 py-sm-0">
-                    <a href="publi_chatGPT.html" class="nav-link text-white">
+                    <a href="" id="publiChatHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-robot"></i><span class="fs-4 ms-3 d-none d-sm-inline">Publi ChatGPT</a></span>        
                     </a>   
                 </li>
                 <li class="nav-item py-2 py-sm-0">
-                    <a href="trends.html" class="nav-link text-white">
+                    <a href="" id="trendsHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-arrow-trend-up"></i><span class="fs-4 ms-3 d-none d-sm-inline">Trends</span>      
                     </a>   
                 </li>
                 <li class="nav-item py-2 py-sm-0">
-                    <a href="links.html" class="nav-link text-white">
+                    <a href="" id="linksHref" class="nav-link text-white">
                         <i class="fs-5 fa fa-link"></i><span class="fs-4 ms-3 d-none d-sm-inline">Links Úteis</span>      
                     </a>   
                 </li>
@@ -64,12 +65,12 @@
                 <div class="row align-items-center">
                     <div class="col-10 col-sm-10 d-none d-sm-block">   
                         <div class="d-inline"><img src="img/fogo.svg" alt="fogo" width="35" height="35"></div>
-                        <div class="d-inline h4 text-center">Olá Marina!</div>
+                        <div class="d-inline h4 text-center" id="nome_usuario1"></div>
                         <div class="d-inline p-1"><img src="img/foguete.svg" alt="foguete" width="35" height="35"></div>                 
                     </div>
                     <div class="col-10 col-sm-10 d-sm-none">   
                         <div class="d-inline"><img src="img/fogo.svg" alt="fogo" width="35" height="35"></div>
-                        <div class="d-inline h4 text-center">Olá Marina!</div>             
+                        <div class="d-inline h4 text-center" id="nome_usuario2"></div>             
                     </div>
                     <div class="col-2 col-sm-2">
                         <nav class="navbar navbar-light justify-content-end">                          
@@ -77,15 +78,15 @@
                                 <div class="picture1">
                                     <img class="perfil" src="img/perfil.png" alt="perfil_icone" width="55" height="55" data-bs-toggle="dropdown" aria-expanded="false">
                                     <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="perfil_oficial.html">Perfil</a></li>
-                                    <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+                                    <li><a class="dropdown-item" id="perfil_link1" href="">Perfil</a></li>
+                                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
                                     </ul>
                                 </div>
                                 <div class="picture2">
                                     <img class="perfil" src="img/perfil_hover.png" alt="perfil_hover" width="55" height="55" data-bs-toggle="dropdown" aria-expanded="false">
                                     <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="perfil_oficial.html">Perfil</a></li>
-                                    <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+                                    <li><a class="dropdown-item" id="perfil_link2" href="">Perfil</a></li>
+                                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
                                     </ul>
                                 </div>
                             </div>                          
@@ -98,7 +99,7 @@
             <div class="container" style="margin-top: 80px; margin-bottom: 50px;">
                 <div class="row justify-content-center">
                   <div class="col-12">
-                    <p class="h1 justify-content-start">Dashboard</p>
+                    <p class="h2 justify-content-start">Dashboard</p>
                   </div>
                 </div>
               </div>              
@@ -109,7 +110,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="row text-left">
-                                <p class="h3" style="margin-bottom: 30px;">Produtos</p>
+                                <p class="h4" style="margin-bottom: 30px;">Produtos</p>
                             </div>
                             <div class="row text-center" style="margin-bottom: 50px;">
                                 <div id="grafico1"></div> 
@@ -117,7 +118,7 @@
                         </div>  
                         <div class="col-12 col-md-6">
                             <div class="row text-left">
-                                <p class="h3" style="margin-bottom: 30px;">Faturamento x Produto</p>
+                                <p class="h4" style="margin-bottom: 30px;">Faturamento x Produto</p>
                             </div>
                             <div class="row" style="margin-bottom: 50px;">
                                 <div id="grafico2"></div> 
@@ -127,7 +128,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="row text-left">
-                                <p class="h3" style="margin-bottom: 30px;">Produtos Ativos x Plataforma</p>
+                                <p class="h4" style="margin-bottom: 30px;">Produtos Ativos x Plataforma</p>
                             </div>
                             <div class="row text-center" style="margin-bottom: 50px;">
                                 <div id="grafico3"></div> 
@@ -135,7 +136,7 @@
                         </div>  
                         <div class="col-12 col-md-6">
                             <div class="row text-left">
-                                <p class="h3" style="margin-bottom: 30px;">Faturamento x Plataforma</p>
+                                <p class="h4" style="margin-bottom: 30px;">Faturamento x Plataforma</p>
                             </div>
                             <div class="row" style="margin-bottom: 50px;">
                                 <div id="grafico4"></div> 
@@ -145,7 +146,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="row text-left">
-                                <p class="h3" style="margin-bottom: 30px;">Publicações</p>
+                                <p class="h4" style="margin-bottom: 30px;">Publicações</p>
                             </div>
                             <div class="row" style="margin-bottom: 50px;">
                                 <div id="grafico5"></div> 
@@ -153,7 +154,7 @@
                         </div>  
                         <div class="col-12 col-md-6">
                             <div class="row text-left">
-                                <p class="h3" style="margin-bottom: 30px;">Publicações x Mídia</p>
+                                <p class="h4" style="margin-bottom: 30px;">Publicações x Mídia</p>
                             </div>
                             <div class="row" style="margin-bottom: 50px;">
                                 <div id="grafico6"></div> 
@@ -191,240 +192,9 @@
         </div> 
     
     </div> 
-     
-    <script>
- 
-
-
-        let el1 = document.getElementById("grafico1");
-        let options1 = {
-          series: [12, 7, 3],
-          chart: {
-          width: 480,
-          type: 'pie',
-        },
-        labels: ['Ativos', 'Selecionados', 'Inativos'],
-        responsive: [{
-          breakpoint: 992,
-          options: {
-            chart: {
-              width: 280
-            },
-            legend: {
-              position: 'bottom'
-            }
-          }
-        }]
-        }; 
-
-        let chart1 = new ApexCharts(el1, options1)
-        chart1.render()
-     
-      
-
-      
-
-        let el2 = document.getElementById("grafico2");
-        let options2 = {
-            chart: {
-                type: 'bar',
-                height: 350,
-                width: 450
-            },
-            series: [
-                {
-                    name: 'Faturamento',
-                    data: [8000,2200,1800,400]
-                }
-
-            ],
-            xaxis: {
-                categories: ['Sobrancelhas Perfeitas', 'Método Emagrecer de Vez', 'Mentoria Viver de Tráfeco','FNO']
-            },
-            colors: ['#68e9e9'],
-            responsive: [{
-            breakpoint: 992,
-             options: {
-             chart: {
-                height: 190,
-                width: 240
-            },
-          }
-        }]
-        };  
-
-        let chart2 = new ApexCharts(el2, options2)
-        chart2.render()
-
-
-
-        let el3 = document.getElementById("grafico3");
-        let options3 = {
-          series: [8, 3, 1],
-          labels: ['Hotmart', 'Monetizze', 'Eduzz'],
-          chart: {
-          width: 480,
-          type: 'donut',
-        },
-        plotOptions: {
-          pie: {
-            startAngle: -90,
-            endAngle: 270
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
-        fill: {
-          type: 'gradient',
-        },
-        legend: {
-          formatter: function(val, opts) {
-            return val + " - " + opts.w.globals.series[opts.seriesIndex]
-          }
-        },
-        title: {
-          text: ''
-        },
-        responsive: [{
-          breakpoint: 1000,
-          options: {
-            chart: {
-              width: 290
-            },
-            legend: {
-              position: 'bottom'
-            }
-          }
-        }]
-        };
-
-        let chart3 = new ApexCharts(el3, options3)
-        chart3.render()
-
-
-
-
-
-        let el4 = document.getElementById("grafico4");
-        let options4 = {
-            chart: {
-                type: 'bar',
-                height: 350,
-                width: 450
-            },
-            series: [
-                {
-                    name: 'Faturamento',
-                    data: [15000, 4800, 200, 50]
-                }
-            ],
-            xaxis: {
-                categories: ['Hotmart', 'Monetizze', 'Eduzz','Ticto']
-            },
-            plotOptions:{
-                bar: {
-                    horizontal: false,
-                    dataLabels: {
-                        position: 'top'
-                    }
-                }
-            },
-            yaxis:{
-                min: 0,
-                max: 17000
-            },
-            grid: {
-                show: true,
-                xaxis: {
-                    lines: {
-                        show: true
-                    }
-                }
-            },
-            colors: ['#FF6688'],
-            responsive: [{
-            breakpoint: 992,
-             options: {
-             chart: {
-                height: 190,
-                width: 240
-            },
-          }
-        }]
-        }
-        let chart4 = new ApexCharts(el4, options4)
-        chart4.render()
-
-
-        let el5 = document.getElementById("grafico5");
-        let options5 = {
-          series: [6, 5, 2],
-          labels: ['Em Análise', 'Publicado', 'Em Produção'],
-          chart: {
-          width: 480,
-          type: 'donut',
-        },
-        responsive: [{
-          breakpoint: 1000,
-          options: {
-            chart: {
-              width: 290
-            },
-            legend: {
-              position: 'bottom'
-            }
-          }
-        }]
-        };
-
-
-        let chart5 = new ApexCharts(el5, options5)
-        chart5.render()
-
-
-
-
-
-        let el6 = document.getElementById("grafico6");
-        let options6 = {
-            chart: {
-                type: 'bar',
-                height: 350,
-                width: 450
-            },
-            series: [
-                {
-                    name: 'Publicações',
-                    data: [15,7,2]
-                }
-
-            ],
-            xaxis: {
-                categories: ['Instagram', 'YouTube', 'Facebook']
-            },
-            responsive: [{
-            breakpoint: 992,
-             options: {
-             chart: {
-                height: 190,
-                width: 240
-            },
-          }
-        }]
-        };  
-
-        let chart6 = new ApexCharts(el6, options6)
-        chart6.render()
-
-
-
-
-
-
-
-    </script>
-  
+    
+    <script src="./js/easyPubJS.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
 </html>
