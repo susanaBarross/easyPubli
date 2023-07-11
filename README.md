@@ -13,7 +13,7 @@
 ### Passo 1 - Clonar o projeto
     Faça o clone do projeto para o diretório local
     Abra o terminal e execute o comando a seguir
-    $ git clone ???? 
+    $ git clone https://github.com/susanaBarross/easyPubli.git 
 
 ### Passo 2 (Instalar as bibliotecas obrigatórias)
     Navegue ao diretorio do projeto
